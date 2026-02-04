@@ -14,8 +14,8 @@ let messageIndex = 0;
 
 noBtn.addEventListener('click', () => {
   // Increase the size of the Yes button
-  yesFontSize += 5; 
-  yesBtn.style.fontSize = `${yesFontSize}px`;
+  yesFontSize += 5;
+  yesBtn.style.fontSize = yesFontSize + "px";
 
   // Rotate through messages
   noBtn.textContent = messages[messageIndex];
@@ -29,4 +29,5 @@ yesBtn.addEventListener('click', () => {
     <img src="kissing-bears.jpg" alt="Teddy Bear Kissing" width="573" height="475">
   `;
 });
+
 
