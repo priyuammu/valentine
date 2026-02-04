@@ -7,7 +7,7 @@ let yesFontSize = 18; // initial font size in px
 const messages = [
   "Are you sure? 🙄",
   "Really sure? 😑",
-  "Think again!"😥,
+  "Think again!😥",
   "Come on, say yes!😰"
 ];
 let messageIndex = 0;
@@ -29,3 +29,4 @@ yesBtn.addEventListener('click', () => {
     <img src="kissing-bears.jpg" alt="Teddy Bear Kissing" width="573" height="475">
   `;
 });
+
