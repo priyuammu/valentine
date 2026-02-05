@@ -8,13 +8,12 @@ let yesFontSize = 18;
 const messages = [
   "Are you sure? 🙄",
   "Really sure? 😑",
-  "Think again!😥",
-  "Come on, say yes!😰"
+  "Think again! 😥",
+  "Come on, say yes! 😰"
 ];
 let messageIndex = 0;
 
 noBtn.addEventListener('click', () => {
-  // Track "No" click
   gtag('event', 'click_no', { 'event_category': 'engagement' });
 
   yesFontSize += 10; 
@@ -26,18 +25,17 @@ noBtn.addEventListener('click', () => {
 });
 
 yesBtn.addEventListener('click', () => {
-  // Track "Yes" click
   gtag('event', 'click_yes', { 'event_category': 'engagement' });
 
-  // Hide initial content
+  // Update content with your local image
   contentDiv.innerHTML = `
     <h1 style="color: #ff4d6d;">I knew you'd say yes! ❤️</h1>
-    <img src="https://media.tenor.com/gU_i95yS698AAAAi/tkthao219-bubududu.gif" alt="Happy" width="250">
+    <img src="kissing-bears.jpg" alt="Teddy Bear Kissing" width="80%" style="max-width:500px; border-radius: 20px; margin-bottom: 20px;">
   `;
 
-  // Show message form
+  // Show the message box
   messageArea.style.display = 'block';
-  
-  // Scroll to the form automatically
+
+  // Smooth scroll to the textbox
   window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 });
