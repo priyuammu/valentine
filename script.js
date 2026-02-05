@@ -1,8 +1,9 @@
 const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
 const contentDiv = document.getElementById('content');
+const messageArea = document.getElementById('messageArea');
 
-let yesFontSize = 18; // initial font size in px
+let yesFontSize = 18; 
 
 const messages = [
   "Are you sure? 🙄",
@@ -13,25 +14,30 @@ const messages = [
 let messageIndex = 0;
 
 noBtn.addEventListener('click', () => {
-  // Record the "No" click in Google Analytics
+  // Track "No" click
   gtag('event', 'click_no', { 'event_category': 'engagement' });
 
-  // Increase the size of the Yes button
-  yesFontSize += 5; 
+  yesFontSize += 10; 
   yesBtn.style.fontSize = yesFontSize + "px";
+  yesBtn.style.padding = (yesFontSize / 2) + "px " + yesFontSize + "px";
 
-  // Rotate through messages
   noBtn.textContent = messages[messageIndex];
   messageIndex = (messageIndex + 1) % messages.length;
 });
 
 yesBtn.addEventListener('click', () => {
-  // Record the "Yes" click in Google Analytics
+  // Track "Yes" click
   gtag('event', 'click_yes', { 'event_category': 'engagement' });
 
-  // Replace content with success message and image
+  // Hide initial content
   contentDiv.innerHTML = `
-    <p>I knew you'd say yes! ❤️</p>
-    <img src="kissing-bears.jpg" alt="Teddy Bear Kissing" width="573" height="475">
+    <h1 style="color: #ff4d6d;">I knew you'd say yes! ❤️</h1>
+    <img src="https://media.tenor.com/gU_i95yS698AAAAi/tkthao219-bubududu.gif" alt="Happy" width="250">
   `;
+
+  // Show message form
+  messageArea.style.display = 'block';
+  
+  // Scroll to the form automatically
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 });
