@@ -16,7 +16,6 @@ body {
 
 h1 {
   color: #ff4d6d;
-  margin: 20px 0;
 }
 
 .buttons {
@@ -24,7 +23,7 @@ h1 {
   gap: 20px;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 #yesBtn {
@@ -34,7 +33,6 @@ h1 {
   border-radius: 10px;
   padding: 10px 20px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
 }
 
 #noBtn {
@@ -48,11 +46,4 @@ h1 {
 
 .bear-gif {
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.2);
-}
-
-textarea:focus {
-  outline: none;
-  border-color: #ff0054 !important;
-  box-shadow: 0 0 10px rgba(255, 77, 109, 0.3);
 }
